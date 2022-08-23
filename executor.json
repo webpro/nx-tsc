@@ -1,0 +1,9 @@
+{
+  "executors": {
+    "tsc": {
+      "implementation": "./index.js",
+      "schema": "./schema.json",
+      "description": "Runs `tsc -p` on the provided TypeScript configurations (tsconfig.json)"
+    }
+  }
+}

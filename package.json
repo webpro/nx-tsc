@@ -1,0 +1,20 @@
+{
+  "name": "@webpro/nx-tsc",
+  "version": "0.0.0",
+  "description": "Nx executor to type-check project source files using tsc --noEmit",
+  "main": "./index.js",
+  "executors": "./executor.json",
+  "keywords": [
+    "nx",
+    "executor",
+    "tsc"
+  ],
+  "author": {
+    "email": "lars@webpro.nl",
+    "name": "Lars Kappert"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
+}
