@@ -1,6 +1,6 @@
 {
   "name": "@webpro/nx-tsc",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Nx executor to type-check project source files using tsc --noEmit",
   "main": "./index.js",
   "executors": "./executor.json",
