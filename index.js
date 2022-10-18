@@ -1,6 +1,7 @@
 const { spawn } = require('child_process');
 const { resolve, join } = require('path');
 
+const isWin32 = process.platform == 'win32';
 const executable = resolve('node_modules', '.bin', 'tsc');
 
 async function tscExecutor(options, context) {
@@ -11,8 +12,8 @@ async function tscExecutor(options, context) {
     tsConfigs.map(
       tsConfig =>
         new Promise(resolve => {
-          const child = spawn(executable, ['--noEmit', '-p', join(libRoot, tsConfig)], {
-            shell: process.platform == 'win32',
+          const child = spawn((isWin32 ? `"${executable}"` : executable), ['--noEmit', '-p', join(libRoot, tsConfig)], {
+            shell: isWin32,
             stdio: 'inherit',
           });
           child.on('data', console.log);
