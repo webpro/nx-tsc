@@ -5,7 +5,7 @@ const executable = resolve('node_modules', '.bin', 'tsc');
 
 async function tscExecutor(options, context) {
   const tsConfigs = Array.isArray(options.tsConfig) ? options.tsConfig : [options.tsConfig];
-  const libRoot = context.workspace.projects[context.projectName].root;
+  const libRoot = (context.workspace ?? context.projectsConfigurations).projects[context.projectName].root;
 
   const executionCodes = await Promise.all(
     tsConfigs.map(
